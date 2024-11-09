@@ -1,0 +1,2391 @@
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "deps.edn + shadow-cljs" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/e140687/Repos/manifold-experiment; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware shadow.cljs.devtools.server.nrepl/middleware]")
+; Jacking in...
+; Connecting using "deps.edn + shadow-cljs" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/e140687/Repos/manifold-experiment; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware shadow.cljs.devtools.server.nrepl/middleware]")
+; Using host:port localhost:53491 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Creating cljs repl session...
+; Connecting cljs repl: deps.edn + shadow-cljs...
+; Starting cljs repl for: deps.edn + shadow-cljs...
+; shadow-cljs - HTTP server available at http://localhost:8080
+; [:app] Configuring build.
+; [:app] Compiling ...
+; [:app] Build completed. (219 files, 0 compiled, 0 warnings, 2.32s)
+; Cljs builds started
+; Connected session: cljs, repl: :app
+; TIPS: You can choose which REPL to use (clj or cljs):
+;    *Calva: Toggle REPL connection*
+;    (There is a button in the status bar for this)
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
+nil
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+cljs꞉user꞉> 
+; Jack-in done.
+cljs꞉user꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (219 files, 1 compiled, 0 warnings, 0.18s)
+; [:app] Compiling ...
+; [:app] Build completed. (219 files, 2 compiled, 0 warnings, 0.14s)
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] []))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             []))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "org." is not available, it was required by "app/subs.cljs".
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] []))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             []))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "org.mentat" is not available, it was required by "app/subs.cljs".
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+nil
+; 
+; ------ REPL Error while processing ---------------------------------------------
+; (ns app.subs
+;   (:require [re-frame.core :as rf]
+;             [org.mentat/emmy :as emmy]))
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+cljs꞉app.subs꞉> 
+nil
+; 
+; ------ WARNING - :undeclared-ns ------------------------------------------------
+;  Resource: <eval>:1:2
+;  No such namespace: rf, could not locate rf.cljs, rf.cljc, or JavaScript source providing "rf"
+; --------------------------------------------------------------------------------
+; 
+; 
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:1:2
+;  Use of undeclared Var rf/reg-sub
+; --------------------------------------------------------------------------------
+; 
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]))
+;    4 | 
+;    5 | (rf/reg-sub :app/todos
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require [re-frame.core :as rf] [org.mentat/emmy :as emmy] [org.me]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]
+;    4 |             [org.me]))
+;    5 | 
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require
+;             [re-frame.core :as rf]
+;             [org.mentat/emmy :as emmy]
+;             [org.mentat]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]
+;    4 |             [org.mentat]))
+;    5 | 
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require
+;             [re-frame.core :as rf]
+;             [org.mentat/emmy :as emmy]
+;             [org.mentat/emmy.]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]
+;    4 |             [org.mentat/emmy.]))
+;    5 | 
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:1:1
+; --------------------------------------------------------------------------------
+; 
+;    1 | (ns app.subs
+; -------^------------------------------------------------------------------------
+; null
+; Invalid namespace declaration
+; -- Syntax error -------------------
+; 
+;   (... ... (:require
+;             [re-frame.core :as rf]
+;             [org.mentat/emmy :as emmy]
+;             [org.mentat]))
+;            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 
+; has extra input
+; 
+; -- Relevant specs -------
+; 
+; :shadow.build.ns-form/ns-form:
+;   (clojure.spec.alpha/cat
+;    :ns
+;    '#{clojure.core/ns}
+;    :name
+;    clojure.core/simple-symbol?
+;    :docstring
+;    (clojure.spec.alpha/? clojure.core/string?)
+;    :meta
+;    (clojure.spec.alpha/? clojure.core/map?)
+;    :clauses
+;    :shadow.build.ns-form/ns-clauses)
+; 
+; -------------------------
+; Detected 1 error
+; 
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [org.mentat/emmy :as emmy]
+;    4 |             [org.mentat]))
+;    5 | 
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "org.mentat" is not available, it was required by "app/subs.cljs".
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "emmy.calcu" is not available, it was required by "app/subs.cljs".
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "emmy.calcu" is not available, it was required by "app/subs.cljs".
+; 
+; WARNING: abs already refers to: #'clojure.core/abs in namespace: clojure.math.numeric-tower, being replaced by: #'clojure.math.numeric-tower/abs
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:13
+; --------------------------------------------------------------------------------
+;    8 |     (:todos db)))
+;    9 | 
+;   10 | (comment
+;   11 |   (manifold/)
+; -------------------^------------------------------------------------------------
+; app/subs.cljs [line 11, col 13] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   12 |   )
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:13
+; --------------------------------------------------------------------------------
+;    8 |     (:todos db)))
+;    9 | 
+;   10 | (comment
+;   11 |   (manifold/)
+; -------------------^------------------------------------------------------------
+; app/subs.cljs [line 11, col 13] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   12 |   )
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:13
+; --------------------------------------------------------------------------------
+;    8 |     (:todos db)))
+;    9 | 
+;   10 | (comment
+;   11 |   (manifold/)
+; -------------------^------------------------------------------------------------
+; app/subs.cljs [line 11, col 13] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   12 |   )
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:13
+; --------------------------------------------------------------------------------
+;    8 |     (:todos db)))
+;    9 | 
+;   10 | (comment
+;   11 |   (manifold/)
+; -------------------^------------------------------------------------------------
+; app/subs.cljs [line 11, col 13] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   12 |   )
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:13
+; --------------------------------------------------------------------------------
+;    8 |     (:todos db)))
+;    9 | 
+;   10 | (comment
+;   11 |   (manifold/)
+; -------------------^------------------------------------------------------------
+; app/subs.cljs [line 11, col 13] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   12 |   )
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:13
+; --------------------------------------------------------------------------------
+;    8 |     (:todos db)))
+;    9 | 
+;   10 | (comment
+;   11 |   (manifold/)
+; -------------------^------------------------------------------------------------
+; app/subs.cljs [line 11, col 13] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   12 |   )
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "emmy.co" is not available, it was required by "app/subs.cljs".
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; The required namespace "emmy" is not available, it was required by "app/subs.cljs".
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:13
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | (comment
+;   12 |   (manifold/)
+; -------------------^------------------------------------------------------------
+; app/subs.cljs [line 12, col 13] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   13 |   )
+; --------------------------------------------------------------------------------
+; 
+nil
+; 
+; ------ REPL Error while processing ---------------------------------------------
+; (ns app.subs
+;   (:require [re-frame.core :as rf]
+;             [emmy.env :as emmy]
+;             [emmy.calculus.manifold :as manifold]
+;             ))
+; no source by id: [:shadow.build.classpath/resource "app/subs.cljs"]
+; {:id [:shadow.build.classpath/resource "app/subs.cljs"]}
+; ExceptionInfo: no source by id: [:shadow.build.classpath/resource "app/subs.cljs"]
+; 	shadow.build.data/get-source-by-id (data.clj:175)
+; 	shadow.build.data/get-source-by-id (data.clj:172)
+; 	shadow.build.compiler/remove-dead-js-deps/remove-fn--20919/fn--20920 (compiler.clj:1254)
+; 	clojure.core/complement/fn--5737 (core.clj:1455)
+; 	clojure.core/filter/fn--5962 (core.clj:2834)
+; 	clojure.lang.LazySeq.sval (LazySeq.java:42)
+; 	clojure.lang.LazySeq.seq (LazySeq.java:51)
+; 	clojure.lang.ChunkedCons.chunkedNext (ChunkedCons.java:59)
+; 	clojure.core/chunk-next (core.clj:710)
+; 	clojure.core.protocols/fn--8244 (protocols.clj:137)
+; 	clojure.core.protocols/fn--8244 (protocols.clj:124)
+; 	clojure.core.protocols/fn--8204/G--8199--8213 (protocols.clj:19)
+; 	clojure.core.protocols/seq-reduce (protocols.clj:31)
+; 	clojure.core.protocols/fn--8236 (protocols.clj:75)
+; 	clojure.core.protocols/fn--8236 (protocols.clj:75)
+; 	clojure.core.protocols/fn--8178/G--8173--8191 (protocols.clj:13)
+; 	clojure.core/reduce (core.clj:6886)
+; 	clojure.core/into (core.clj:6958)
+; 	clojure.core/into (core.clj:6950)
+; 	shadow.build.compiler/remove-dead-js-deps/remove-fn--20919 (compiler.clj:1256)
+; 	clojure.core/update (core.clj:6231)
+; 	clojure.core/update (core.clj:6223)
+; 	shadow.build.compiler/remove-dead-js-deps/fn--20924/fn--20925 (compiler.clj:1262)
+; 	clojure.core/map/fn--5935 (core.clj:2770)
+; 	clojure.lang.LazySeq.sval (LazySeq.java:42)
+; 	clojure.lang.LazySeq.seq (LazySeq.java:51)
+; 	clojure.lang.RT.seq (RT.java:535)
+; 	clojure.core/seq--5467 (core.clj:139)
+; 	clojure.core.protocols/seq-reduce (protocols.clj:24)
+; 	clojure.core.protocols/fn--8236 (protocols.clj:75)
+; 	clojure.core.protocols/fn--8236 (protocols.clj:75)
+; 	clojure.core.protocols/fn--8178/G--8173--8191 (protocols.clj:13)
+; 	clojure.core/reduce (core.clj:6886)
+; 	clojure.core/into (core.clj:6958)
+; 	clojure.core/into (core.clj:6950)
+; 	shadow.build.compiler/remove-dead-js-deps/fn--20924 (compiler.clj:1263)
+; 	clojure.core/update (core.clj:6231)
+; 	clojure.core/update (core.clj:6223)
+; 	shadow.build.compiler/remove-dead-js-deps (compiler.clj:1260)
+; 	shadow.build.compiler/remove-dead-js-deps (compiler.clj:1249)
+; 	shadow.build.compiler/compile-all (compiler.clj:1507)
+; 	shadow.build.compiler/compile-all (compiler.clj:1359)
+; 	shadow.build.api/compile-sources (api.clj:261)
+; 	shadow.build.api/compile-sources (api.clj:253)
+; 	shadow.build.api/compile-sources (api.clj:265)
+; 	shadow.build.api/compile-sources (api.clj:253)
+; 	shadow.cljs.repl/repl-ns (repl.clj:400)
+; 	shadow.cljs.repl/repl-ns (repl.clj:383)
+; 	shadow.cljs.repl/process-read-result (repl.clj:570)
+; 	shadow.cljs.repl/process-read-result (repl.clj:550)
+; 	shadow.cljs.repl/process-input (repl.clj:713)
+; 	shadow.cljs.repl/process-input (repl.clj:691)
+; 	shadow.cljs.devtools.server.worker.impl/eval23192/fn--23195 (impl.clj:698)
+; 	clojure.lang.MultiFn.invoke (MultiFn.java:234)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--22832/fn--22833/fn--22841 (util.clj:283)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--22832/fn--22833 (util.clj:282)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--22832 (util.clj:255)
+; 	java.lang.Thread.run (Thread.java:829)
+; 
+cljs꞉app.subs꞉> 
+nil
+; 
+; ------ REPL Error while processing ---------------------------------------------
+; (ns app.subs
+;   (:require [re-frame.core :as rf]
+;             [emmy.env :as emmy]
+;             [emmy.calculus.manifold :as manifold]
+;             ))
+; no source by id: [:shadow.build.classpath/resource "app/subs.cljs"]
+; {:id [:shadow.build.classpath/resource "app/subs.cljs"]}
+; ExceptionInfo: no source by id: [:shadow.build.classpath/resource "app/subs.cljs"]
+; 	shadow.build.data/get-source-by-id (data.clj:175)
+; 	shadow.build.data/get-source-by-id (data.clj:172)
+; 	shadow.build.compiler/remove-dead-js-deps/remove-fn--20919/fn--20920 (compiler.clj:1254)
+; 	clojure.core/complement/fn--5737 (core.clj:1455)
+; 	clojure.core/filter/fn--5962 (core.clj:2834)
+; 	clojure.lang.LazySeq.sval (LazySeq.java:42)
+; 	clojure.lang.LazySeq.seq (LazySeq.java:51)
+; 	clojure.lang.ChunkedCons.chunkedNext (ChunkedCons.java:59)
+; 	clojure.core/chunk-next (core.clj:710)
+; 	clojure.core.protocols/fn--8244 (protocols.clj:137)
+; 	clojure.core.protocols/fn--8244 (protocols.clj:124)
+; 	clojure.core.protocols/fn--8204/G--8199--8213 (protocols.clj:19)
+; 	clojure.core.protocols/seq-reduce (protocols.clj:31)
+; 	clojure.core.protocols/fn--8236 (protocols.clj:75)
+; 	clojure.core.protocols/fn--8236 (protocols.clj:75)
+; 	clojure.core.protocols/fn--8178/G--8173--8191 (protocols.clj:13)
+; 	clojure.core/reduce (core.clj:6886)
+; 	clojure.core/into (core.clj:6958)
+; 	clojure.core/into (core.clj:6950)
+; 	shadow.build.compiler/remove-dead-js-deps/remove-fn--20919 (compiler.clj:1256)
+; 	clojure.core/update (core.clj:6231)
+; 	clojure.core/update (core.clj:6223)
+; 	shadow.build.compiler/remove-dead-js-deps/fn--20924/fn--20925 (compiler.clj:1262)
+; 	clojure.core/map/fn--5935 (core.clj:2770)
+; 	clojure.lang.LazySeq.sval (LazySeq.java:42)
+; 	clojure.lang.LazySeq.seq (LazySeq.java:51)
+; 	clojure.lang.RT.seq (RT.java:535)
+; 	clojure.core/seq--5467 (core.clj:139)
+; 	clojure.core.protocols/seq-reduce (protocols.clj:24)
+; 	clojure.core.protocols/fn--8236 (protocols.clj:75)
+; 	clojure.core.protocols/fn--8236 (protocols.clj:75)
+; 	clojure.core.protocols/fn--8178/G--8173--8191 (protocols.clj:13)
+; 	clojure.core/reduce (core.clj:6886)
+; 	clojure.core/into (core.clj:6958)
+; 	clojure.core/into (core.clj:6950)
+; 	shadow.build.compiler/remove-dead-js-deps/fn--20924 (compiler.clj:1263)
+; 	clojure.core/update (core.clj:6231)
+; 	clojure.core/update (core.clj:6223)
+; 	shadow.build.compiler/remove-dead-js-deps (compiler.clj:1260)
+; 	shadow.build.compiler/remove-dead-js-deps (compiler.clj:1249)
+; 	shadow.build.compiler/compile-all (compiler.clj:1507)
+; 	shadow.build.compiler/compile-all (compiler.clj:1359)
+; 	shadow.build.api/compile-sources (api.clj:261)
+; 	shadow.build.api/compile-sources (api.clj:253)
+; 	shadow.build.api/compile-sources (api.clj:265)
+; 	shadow.build.api/compile-sources (api.clj:253)
+; 	shadow.cljs.repl/repl-ns (repl.clj:400)
+; 	shadow.cljs.repl/repl-ns (repl.clj:383)
+; 	shadow.cljs.repl/process-read-result (repl.clj:570)
+; 	shadow.cljs.repl/process-read-result (repl.clj:550)
+; 	shadow.cljs.repl/process-input (repl.clj:713)
+; 	shadow.cljs.repl/process-input (repl.clj:691)
+; 	shadow.cljs.devtools.server.worker.impl/eval23192/fn--23195 (impl.clj:698)
+; 	clojure.lang.MultiFn.invoke (MultiFn.java:234)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--22832/fn--22833/fn--22841 (util.clj:283)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--22832/fn--22833 (util.clj:282)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--22832 (util.clj:255)
+; 	java.lang.Thread.run (Thread.java:829)
+; 
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 138 compiled, 0 warnings, 1.96s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.11s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:13
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | (comment
+;   12 |   (manifold/)
+; -------------------^------------------------------------------------------------
+; app/subs.cljs [line 12, col 13] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   13 |   )
+; --------------------------------------------------------------------------------
+; 
+nil
+; 
+; ------ REPL Error while processing ---------------------------------------------
+; (manifold/R2-rect)
+; no source by provide: app.subs
+; {:provide app.subs}
+; ExceptionInfo: no source by provide: app.subs
+; 	shadow.build.data/get-source-id-by-provide (data.clj:192)
+; 	shadow.build.data/get-source-id-by-provide (data.clj:187)
+; 	shadow.build.data/get-source-by-provide (data.clj:195)
+; 	shadow.build.data/get-source-by-provide (data.clj:194)
+; 	shadow.cljs.repl/repl-compile/fn--22616/fn--22617 (repl.clj:512)
+; 	shadow.cljs.repl/repl-compile/fn--22616 (repl.clj:488)
+; 	shadow.cljs.repl/repl-compile (repl.clj:486)
+; 	shadow.cljs.repl/repl-compile (repl.clj:483)
+; 	shadow.cljs.repl/process-read-result (repl.clj:574)
+; 	shadow.cljs.repl/process-read-result (repl.clj:550)
+; 	shadow.cljs.repl/process-input (repl.clj:713)
+; 	shadow.cljs.repl/process-input (repl.clj:691)
+; 	shadow.cljs.devtools.server.worker.impl/eval23192/fn--23195 (impl.clj:698)
+; 	clojure.lang.MultiFn.invoke (MultiFn.java:234)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--22832/fn--22833/fn--22841 (util.clj:283)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--22832/fn--22833 (util.clj:282)
+; 	shadow.cljs.devtools.server.util/server-thread/fn--22832 (util.clj:255)
+; 	java.lang.Thread.run (Thread.java:829)
+; 
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 1 compiled, 0 warnings, 0.10s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+#object[emmy.calculus.manifold.t_emmy$calculus$manifold79834]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+nil
+cljs꞉app.subs꞉> 
+#object[emmy.calculus.manifold.t_emmy$calculus$manifold79834]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.15s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.15s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.15s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.15s)
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:12
+; --------------------------------------------------------------------------------
+;   11 | (comment
+;   12 |   manifold/R2-rect
+;   13 | 
+;   14 |   manifold/
+; ------------------^-------------------------------------------------------------
+; app/subs.cljs [line 14, col 12] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   15 |   )
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 1 compiled, 0 warnings, 0.12s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.14s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.16s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.14s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.15s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.17s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.16s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+{:family {:over Real, :name-format "R(%d)", :patch-templates {:origin {:name :origin, :coordinate-systems {:rectangular #object[emmy$calculus$manifold$__GT_Rectangular], :polar-cylindrical #object[emmy$calculus$manifold$__GT_PolarCylindrical], :spherical-cylindrical #object[emmy$calculus$manifold$__GT_SphericalCylindrical]}}}, :type :emmy.calculus.manifold/manifold-family}, :name "R(2)", :dimension 2, :embedding-dimension 2, :type :emmy.calculus.manifold/manifold}
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.12s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:1
+; --------------------------------------------------------------------------------
+;    8 |   (fn [db _]
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | comment
+; -------^------------------------------------------------------------------------
+;  Can't take value of macro cljs.core/comment
+; --------------------------------------------------------------------------------
+;   12 |   ((manifold/manifold manifold/R2-rect)
+;   13 | 
+;   14 |    
+;   15 |    )
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:1
+; --------------------------------------------------------------------------------
+;    8 |   (fn [db _]
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | comment
+; -------^------------------------------------------------------------------------
+;  Can't take value of macro cljs.core/comment
+; --------------------------------------------------------------------------------
+;   12 |   (manifold/manifold manifold/R2-rect)
+;   13 | 
+;   14 |    
+;   15 |    ()
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:1
+; --------------------------------------------------------------------------------
+;    8 |   (fn [db _]
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | comment
+; -------^------------------------------------------------------------------------
+;  Can't take value of macro cljs.core/comment
+; --------------------------------------------------------------------------------
+;   12 |   (manifold/manifold manifold/R2-rect)
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:1
+; --------------------------------------------------------------------------------
+;    8 |   (fn [db _]
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | comment
+; -------^------------------------------------------------------------------------
+;  Can't take value of macro cljs.core/comment
+; --------------------------------------------------------------------------------
+;   12 |   (manifold/manifold manifold/R2-rect)
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.12s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:11:1
+; --------------------------------------------------------------------------------
+;    8 |   (fn [db _]
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | commen
+; -------^------------------------------------------------------------------------
+;  Use of undeclared Var app.subs/commen
+; --------------------------------------------------------------------------------
+;   12 |   (manifold/manifold manifold/R2-rect)
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.14s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.14s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 2 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:1
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | def (my-manifold (manifold/manifold manifold/R2-rect))
+; -------^------------------------------------------------------------------------
+;  Use of undeclared Var app.subs/def
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:6
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | def (my-manifold (manifold/manifold manifold/R2-rect))
+; ------------^-------------------------------------------------------------------
+;  Use of undeclared Var app.subs/my-manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 2 warnings, 0.12s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:3
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | ()def (my-manifold (manifold/manifold manifold/R2-rect))
+; ---------^----------------------------------------------------------------------
+;  Use of undeclared Var app.subs/def
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:8
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | ()def (my-manifold (manifold/manifold manifold/R2-rect))
+; --------------^-----------------------------------------------------------------
+;  Use of undeclared Var app.subs/my-manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 2 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:2
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  def (my-manifold (manifold/manifold manifold/R2-rect))()
+; --------^-----------------------------------------------------------------------
+;  Use of undeclared Var app.subs/def
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:7
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  def (my-manifold (manifold/manifold manifold/R2-rect))()
+; -------------^------------------------------------------------------------------
+;  Use of undeclared Var app.subs/my-manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 2 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:2
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  def (my-manifold (manifold/manifold manifold/R2-rect))
+; --------^-----------------------------------------------------------------------
+;  Use of undeclared Var app.subs/def
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:7
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  def (my-manifold (manifold/manifold manifold/R2-rect))
+; -------------^------------------------------------------------------------------
+;  Use of undeclared Var app.subs/my-manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 3 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:5:15
+; --------------------------------------------------------------------------------
+;    2 |   (:require [re-frame.core :as rf]
+;    3 |             [emmy.env :as emmy]
+;    4 |             [emmy.calculus.manifold :as manifold]
+;    5 |             ))¯
+; ---------------------^----------------------------------------------------------
+;  Use of undeclared Var app.subs/¯
+; --------------------------------------------------------------------------------
+;    6 | 
+;    7 | (rf/reg-sub :app/todos
+;    8 |   (fn [db _]
+;    9 |     (:todos db)))
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:2
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  def (my-manifold (manifold/manifold manifold/R2-rect))
+; --------^-----------------------------------------------------------------------
+;  Use of undeclared Var app.subs/def
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #3 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:7
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  def (my-manifold (manifold/manifold manifold/R2-rect))
+; -------------^------------------------------------------------------------------
+;  Use of undeclared Var app.subs/my-manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 2 warnings, 0.15s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:2
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  def (my-manifold (manifold/manifold manifold/R2-rect))
+; --------^-----------------------------------------------------------------------
+;  Use of undeclared Var app.subs/def
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:7
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  def (my-manifold (manifold/manifold manifold/R2-rect))
+; -------------^------------------------------------------------------------------
+;  Use of undeclared Var app.subs/my-manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 2 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:5
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  () def (my-manifold (manifold/manifold manifold/R2-rect))
+; -----------^--------------------------------------------------------------------
+;  Use of undeclared Var app.subs/def
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:10
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |  () def (my-manifold (manifold/manifold manifold/R2-rect))
+; ----------------^---------------------------------------------------------------
+;  Use of undeclared Var app.subs/my-manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 2 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:3
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |   def (my-manifold (manifold/manifold manifold/R2-rect))
+; ---------^----------------------------------------------------------------------
+;  Use of undeclared Var app.subs/def
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:8
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |   def (my-manifold (manifold/manifold manifold/R2-rect))
+; --------------^-----------------------------------------------------------------
+;  Use of undeclared Var app.subs/my-manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:3
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 |   (def (my-manifold (manifold/manifold manifold/R2-rect)))
+; ---------^----------------------------------------------------------------------
+; null
+; ClassCastException: class clojure.lang.PersistentList cannot be cast to class clojure.lang.Named (clojure.lang.PersistentList and clojure.lang.Named are in unnamed module of loader 'app')
+; 	clojure.core/namespace (core.clj:1612)
+; 	clojure.core/namespace (core.clj:1612)
+; 	cljs.analyzer/fn--2861 (analyzer.cljc:1949)
+; 	cljs.analyzer/fn--2861 (analyzer.cljc:1931)
+; 	clojure.lang.MultiFn.invoke (MultiFn.java:252)
+; 	cljs.analyzer/analyze-seq* (analyzer.cljc:4080)
+; 	cljs.analyzer/analyze-seq* (analyzer.cljc:4078)
+; 	cljs.analyzer/analyze-seq*-wrap (analyzer.cljc:4085)
+; 	cljs.analyzer/analyze-seq*-wrap (analyzer.cljc:4083)
+; 	cljs.analyzer/analyze-seq (analyzer.cljc:4109)
+; 	cljs.analyzer/analyze-seq (analyzer.cljc:4087)
+; 	cljs.analyzer/analyze-form (analyzer.cljc:4296)
+; 	cljs.analyzer/analyze-form (analyzer.cljc:4293)
+; 	cljs.analyzer/analyze* (analyzer.cljc:4349)
+; 	cljs.analyzer/analyze* (analyzer.cljc:4341)
+; 	shadow.build.compiler/analyze/fn--20565 (compiler.clj:266)
+; 	shadow.build.compiler/analyze (compiler.clj:254)
+; 	shadow.build.compiler/analyze (compiler.clj:211)
+; 	shadow.build.compiler/analyze (compiler.clj:213)
+; 	shadow.build.compiler/analyze (compiler.clj:211)
+; 	shadow.build.compiler/default-analyze-cljs (compiler.clj:420)
+; 	shadow.build.compiler/default-analyze-cljs (compiler.clj:409)
+; 	clojure.core/partial/fn--5908 (core.clj:2642)
+; 	shadow.build.compiler/do-analyze-cljs-string (compiler.clj:326)
+; 	shadow.build.compiler/do-analyze-cljs-string (compiler.clj:283)
+; 	shadow.build.compiler/analyze-cljs-string/fn--20661 (compiler.clj:523)
+; 	shadow.build.compiler/analyze-cljs-string (compiler.clj:522)
+; 	shadow.build.compiler/analyze-cljs-string (compiler.clj:520)
+; 	shadow.build.compiler/do-compile-cljs-resource/fn--20689 (compiler.clj:642)
+; 	shadow.build.compiler/do-compile-cljs-resource (compiler.clj:623)
+; 	shadow.build.compiler/do-compile-cljs-resource (compiler.clj:577)
+; 	shadow.build.compiler/maybe-compile-cljs/fn--20793 (compiler.clj:975)
+; 	shadow.build.compiler/maybe-compile-cljs (compiler.clj:974)
+; 	shadow.build.compiler/maybe-compile-cljs (compiler.clj:950)
+; 	shadow.build.compiler/par-compile-one (compiler.clj:1095)
+; 	shadow.build.compiler/par-compile-one (compiler.clj:1050)
+; 	shadow.build.compiler/par-compile-cljs-sources/fn--20833/iter--20855--20859/fn--20860/fn--20861/fn--20862 (compiler.clj:1168)
+; 	clojure.core/apply (core.clj:667)
+; 	clojure.core/with-bindings* (core.clj:1990)
+; 	clojure.core/with-bindings* (core.clj:1990)
+; 	clojure.core/apply (core.clj:671)
+; 	clojure.core/bound-fn*/fn--5818 (core.clj:2020)
+; 	java.util.concurrent.FutureTask.run (FutureTask.java:264)
+; 	java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1128)
+; 	java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:628)
+; 	java.lang.Thread.run (Thread.java:829)
+; 
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 |    
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 1 compiled, 0 warnings, 0.10s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+#'app.subs/my-manifold
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:10
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+;   13 | 
+;   14 | manifold/
+; ----------------^---------------------------------------------------------------
+; app/subs.cljs [line 14, col 10] Invalid symbol: manifold/.
+; 
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 1 compiled, 1 warnings, 0.07s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:1
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+;   13 | 
+;   14 | manifold/re
+; -------^------------------------------------------------------------------------
+;  Use of undeclared Var emmy.calculus.manifold/re
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 4 warnings, 0.14s)
+; 
+; ------ WARNING #1 - :undeclared-ns ---------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:19
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+; -------------------------^------------------------------------------------------
+;  No such namespace: manifold, could not locate manifold.cljs, manifold.cljc, or JavaScript source providing "manifold"
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:19
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+; -------------------------^------------------------------------------------------
+;  Use of undeclared Var manifold/manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #3 - :undeclared-ns ---------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:37
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+; -------------------------------------------^------------------------------------
+;  No such namespace: manifold, could not locate manifold.cljs, manifold.cljc, or JavaScript source providing "manifold"
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #4 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:37
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+; -------------------------------------------^------------------------------------
+;  Use of undeclared Var manifold/R2-rect
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+nil
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 3 warnings, 0.12s)
+; 
+; ------ WARNING #1 - :undeclared-ns ---------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:19
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold m))
+; -------------------------^------------------------------------------------------
+;  No such namespace: manifold, could not locate manifold.cljs, manifold.cljc, or JavaScript source providing "manifold"
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:19
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold m))
+; -------------------------^------------------------------------------------------
+;  Use of undeclared Var manifold/manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #3 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:37
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold m))
+; -------------------------------------------^------------------------------------
+;  Use of undeclared Var app.subs/m
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 4 warnings, 0.12s)
+; 
+; ------ WARNING #1 - :undeclared-ns ---------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:19
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+; -------------------------^------------------------------------------------------
+;  No such namespace: manifold, could not locate manifold.cljs, manifold.cljc, or JavaScript source providing "manifold"
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:19
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+; -------------------------^------------------------------------------------------
+;  Use of undeclared Var manifold/manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #3 - :undeclared-ns ---------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:37
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+; -------------------------------------------^------------------------------------
+;  No such namespace: manifold, could not locate manifold.cljs, manifold.cljc, or JavaScript source providing "manifold"
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #4 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:37
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold manifold/R2-rect))
+; -------------------------------------------^------------------------------------
+;  Use of undeclared Var manifold/R2-rect
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 2 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-ns ---------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:19
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold m/R2-rect))
+; -------------------------^------------------------------------------------------
+;  No such namespace: manifold, could not locate manifold.cljs, manifold.cljc, or JavaScript source providing "manifold"
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:19
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-manifold (manifold/manifold m/R2-rect))
+; -------------------------^------------------------------------------------------
+;  Use of undeclared Var manifold/manifold
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | 
+;   15 | 
+;   16 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+#'app.subs/my-manifold
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:3
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (m/manifold m/R2-rect))
+;   13 | 
+;   14 | m/
+; ---------^----------------------------------------------------------------------
+; app/subs.cljs [line 14, col 3] Invalid symbol: m/.
+; 
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | 
+;   17 | 
+;   18 |    
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:3
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (m/manifold m/R2-rect))
+;   13 | 
+;   14 | m/
+; ---------^----------------------------------------------------------------------
+; app/subs.cljs [line 14, col 3] Invalid symbol: m/.
+; 
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | 
+;   17 | 
+;   18 |    
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:3
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (m/manifold m/R2-rect))
+;   13 | 
+;   14 | m/
+; ---------^----------------------------------------------------------------------
+; app/subs.cljs [line 14, col 3] Invalid symbol: m/.
+; 
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | 
+;   17 | 
+;   18 |    
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 1 compiled, 0 warnings, 0.14s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.15s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.15s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:1
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (m/manifold m/R2-rect))
+;   13 | 
+;   14 | ( m/constant-manifold-function)
+; -------^------------------------------------------------------------------------
+;  Wrong number of args (0) passed to emmy.calculus.manifold/constant-manifold-function
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | 
+;   17 | 
+;   18 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.11s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:1
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (m/manifold m/R2-rect))
+;   13 | 
+;   14 | (m/constant-manifold-function)
+; -------^------------------------------------------------------------------------
+;  Wrong number of args (0) passed to emmy.calculus.manifold/constant-manifold-function
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | 
+;   17 | 
+;   18 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:1
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (m/manifold m/R2-rect))
+;   13 | 
+;   14 | (m/constant-manifold-function )
+; -------^------------------------------------------------------------------------
+;  Wrong number of args (0) passed to emmy.calculus.manifold/constant-manifold-function
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | 
+;   17 | 
+;   18 |    
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+#object[Function]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.14s)
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:1
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (m/manifold m/R2-rect))
+;   13 | 
+;   14 | (def )(m/constant-manifold-function 2)
+; -------^------------------------------------------------------------------------
+; null
+; Wrong number of args (1) passed to: cljs.analyzer/fn--2861/pfn--2862
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | 
+;   17 | 
+;   18 | 
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:14:1
+; --------------------------------------------------------------------------------
+;   11 | 
+;   12 | (def my-manifold (m/manifold m/R2-rect))
+;   13 | 
+;   14 | (def )(m/constant-manifold-function 2)
+; -------^------------------------------------------------------------------------
+; null
+; Wrong number of args (1) passed to: cljs.analyzer/fn--2861/pfn--2862
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | 
+;   17 | 
+;   18 | 
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 1 compiled, 0 warnings, 0.11s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)
+#'app.subs/my-manifold-function
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:16:2
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | (def my-manifold-function (m/constant-manifold-function 2))
+;   15 | 
+;   16 | (my)
+; --------^-----------------------------------------------------------------------
+;  Use of undeclared Var app.subs/my
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | 
+;   19 | 
+;   20 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.12s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:16:2
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | (def my-manifold-function (m/constant-manifold-function 2))
+;   15 | 
+;   16 | (my)
+; --------^-----------------------------------------------------------------------
+;  Use of undeclared Var app.subs/my
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | 
+;   19 | 
+;   20 | 
+; --------------------------------------------------------------------------------
+:repl/exception!
+; 
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; Assert failed: (manifold-point? point)
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.14s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.11s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.15s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:16:25
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | (def my-manifold-function (m/constant-manifold-function 2))
+;   15 | 
+;   16 | (def my-manifold-point (m/poi))
+; -------------------------------^------------------------------------------------
+;  Use of undeclared Var emmy.calculus.manifold/poi
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | (my-manifold-function )
+;   19 | 
+;   20 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.16s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:16:25
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | (def my-manifold-function (m/constant-manifold-function 2))
+;   15 | 
+;   16 | (def my-manifold-point (m/poi))
+; -------------------------------^------------------------------------------------
+;  Use of undeclared Var emmy.calculus.manifold/poi
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | (my-manifold-function )
+;   19 | 
+;   20 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.11s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:16:24
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | (def my-manifold-function (m/constant-manifold-function 2))
+;   15 | 
+;   16 | (def my-manifold-point (m/point ))
+; ------------------------------^-------------------------------------------------
+;  Wrong number of args (0) passed to emmy.calculus.manifold/point
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | (my-manifold-function )
+;   19 | 
+;   20 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.14s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:18:24
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | (def my-manifold-function (m/constant-manifold-function 2))
+;   17 | 
+;   18 | (def my-manifold-point (m/point ))
+; ------------------------------^-------------------------------------------------
+;  Wrong number of args (0) passed to emmy.calculus.manifold/point
+; --------------------------------------------------------------------------------
+;   19 | 
+;   20 | (my-manifold-function )
+;   21 | 
+;   22 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.12s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:18:24
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | (def my-manifold-function (m/constant-manifold-function 2))
+;   17 | 
+;   18 | (def my-manifold-point (m/point ))
+; ------------------------------^-------------------------------------------------
+;  Wrong number of args (0) passed to emmy.calculus.manifold/point
+; --------------------------------------------------------------------------------
+;   19 | 
+;   20 | (my-manifold-function )
+;   21 | 
+;   22 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:12:29
+; --------------------------------------------------------------------------------
+;    9 |     (:todos db)))
+;   10 | 
+;   11 | 
+;   12 | (def my-coordinate-system m/)
+; -----------------------------------^--------------------------------------------
+; app/subs.cljs [line 12, col 29] Invalid symbol: m/.
+; 
+; --------------------------------------------------------------------------------
+;   13 | 
+;   14 | (def my-manifold (m/manifold m/R2-rect))
+;   15 | 
+;   16 | (def my-manifold-function (m/constant-manifold-function 2))
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 1 compiled, 1 warnings, 0.06s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:18:24
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | (def my-manifold-function (m/constant-manifold-function 2))
+;   17 | 
+;   18 | (def my-manifold-point (m/point ))
+; ------------------------------^-------------------------------------------------
+;  Wrong number of args (0) passed to emmy.calculus.manifold/point
+; --------------------------------------------------------------------------------
+;   19 | 
+;   20 | (my-manifold-function )
+;   21 | 
+;   22 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.11s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:18:24
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | (def my-manifold-function (m/constant-manifold-function 2))
+;   17 | 
+;   18 | (def my-manifold-point (m/point ))
+; ------------------------------^-------------------------------------------------
+;  Wrong number of args (0) passed to emmy.calculus.manifold/point
+; --------------------------------------------------------------------------------
+;   19 | 
+;   20 | (my-manifold-function )
+;   21 | 
+;   22 | 
+; --------------------------------------------------------------------------------
+#'app.subs/my-coordinate-system
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+#'app.subs/my-manifold-point
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.12s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:20:23
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | (def my-manifold-point (m/point my-coordinate-system))
+;   19 | 
+;   20 | (my-manifold-function my)
+; -----------------------------^--------------------------------------------------
+;  Use of undeclared Var app.subs/my
+; --------------------------------------------------------------------------------
+;   21 | 
+;   22 | 
+;   23 | 
+;   24 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:20:23
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | (def my-manifold-point (m/point my-coordinate-system))
+;   19 | 
+;   20 | (my-manifold-function my)
+; -----------------------------^--------------------------------------------------
+;  Use of undeclared Var app.subs/my
+; --------------------------------------------------------------------------------
+;   21 | 
+;   22 | 
+;   23 | 
+;   24 | 
+; --------------------------------------------------------------------------------
+:repl/exception!
+; 
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; Assert failed: (manifold-point? point)
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+:repl/exception!
+; 
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; Assert failed: (manifold-point? point)
+cljs꞉app.subs꞉> 
+:repl/exception!
+; 
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; Assert failed: (manifold-point? point)
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.14s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:20:2
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | (def my-manifold-point (m/point my-coordinate-system))
+;   19 | 
+;   20 | (m/poin)
+; --------^-----------------------------------------------------------------------
+;  Use of undeclared Var emmy.calculus.manifold/poin
+; --------------------------------------------------------------------------------
+;   21 | 
+;   22 | (my-manifold-function my-manifold-point)
+;   23 | 
+;   24 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:20:2
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | (def my-manifold-point (m/point my-coordinate-system))
+;   19 | 
+;   20 | (m/mani)
+; --------^-----------------------------------------------------------------------
+;  Use of undeclared Var emmy.calculus.manifold/mani
+; --------------------------------------------------------------------------------
+;   21 | 
+;   22 | (my-manifold-function my-manifold-point)
+;   23 | 
+;   24 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.16s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:20:20
+; --------------------------------------------------------------------------------
+;   17 | 
+;   18 | (def my-manifold-point (m/point my-coordinate-system))
+;   19 | 
+;   20 | (m/manifold-point? my)
+; --------------------------^-----------------------------------------------------
+;  Use of undeclared Var app.subs/my
+; --------------------------------------------------------------------------------
+;   21 | 
+;   22 | (my-manifold-function my-manifold-point)
+;   23 | 
+;   24 | 
+; --------------------------------------------------------------------------------
+false
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.14s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:18:25
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | (def my-manifold-function (m/constant-manifold-function 2))
+;   17 | 
+;   18 | (def my-manifold-point (m/mani my-coordinate-system))
+; -------------------------------^------------------------------------------------
+;  Use of undeclared Var emmy.calculus.manifold/mani
+; --------------------------------------------------------------------------------
+;   19 | 
+;   20 | (m/manifold-point? my-manifold-point)
+;   21 | 
+;   22 | (my-manifold-function my-manifold-point)
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:18:25
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | (def my-manifold-function (m/constant-manifold-function 2))
+;   17 | 
+;   18 | (def my-manifold-point (m/poin my-coordinate-system))
+; -------------------------------^------------------------------------------------
+;  Use of undeclared Var emmy.calculus.manifold/poin
+; --------------------------------------------------------------------------------
+;   19 | 
+;   20 | (m/manifold-point? my-manifold-point)
+;   21 | 
+;   22 | (my-manifold-function my-manifold-point)
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:18:25
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | (def my-manifold-function (m/constant-manifold-function 2))
+;   17 | 
+;   18 | (def my-manifold-point (m/coo my-coordinate-system))
+; -------------------------------^------------------------------------------------
+;  Use of undeclared Var emmy.calculus.manifold/coo
+; --------------------------------------------------------------------------------
+;   19 | 
+;   20 | (m/manifold-point? my-manifold-point)
+;   21 | 
+;   22 | (my-manifold-function my-manifold-point)
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 1 warnings, 0.13s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /Users/e140687/Repos/manifold-experiment/src/app/subs.cljs:18:24
+; --------------------------------------------------------------------------------
+;   15 | 
+;   16 | (def my-manifold-function (m/constant-manifold-function 2))
+;   17 | 
+;   18 | (def my-manifold-point (m/coords->point my-coordinate-system))
+; ------------------------------^-------------------------------------------------
+;  Wrong number of args (1) passed to emmy.calculus.manifold/coords->point
+; --------------------------------------------------------------------------------
+;   19 | 
+;   20 | (m/manifold-point? my-manifold-point)
+;   21 | 
+;   22 | (my-manifold-function my-manifold-point)
+; --------------------------------------------------------------------------------
+#'app.subs/my-manifold-point
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+true
+cljs꞉app.subs꞉> 
+2
+cljs꞉app.subs꞉> 
+2
+cljs꞉app.subs꞉> 
+#'app.subs/my-manifold-point
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.15s)
+true
+cljs꞉app.subs꞉> 
+2
+cljs꞉app.subs꞉> 
+2
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.13s)
+; [:app] Compiling ...
+; [:app] Build completed. (417 files, 2 compiled, 0 warnings, 0.12s)

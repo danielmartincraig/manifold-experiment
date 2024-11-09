@@ -25,7 +25,7 @@
   (let [[value set-value!] (uix/use-state "")]
     ($ :input.text-input
       {:value value
-       :placeholder "Add a new todo and hit Enter to save"
+       :placeholder "Add a new todo and hit Enter to save it"
        :on-change (fn [^js e]
                     (set-value! (.. e -target -value)))
        :on-key-down (fn [^js e]
